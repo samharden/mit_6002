@@ -68,7 +68,7 @@ def maxVal(toConsider, avail):
         #Explore left branch
         withVal, withToTake = maxVal(toConsider[1:],
                                      avail - nextItem.getCost())
-
+        
         withVal += nextItem.getValue()
         #Explore right branch
         withoutVal, withoutToTake = maxVal(toConsider[1:], avail)
@@ -94,7 +94,6 @@ values = [89,90,95,100,90,79,50,10]
 calories = [123,154,258,354,365,150,95,195]
 foods = buildMenu(names, values, calories)
 
-if __name__ == '__main__':
-    foods = buildMenu(names, values, calories)
-    testGreedys(foods, 1000)
-    testMaxVal(foods, 750)
+testGreedys(foods, 750)
+print('')
+testMaxVal(foods, 750)
